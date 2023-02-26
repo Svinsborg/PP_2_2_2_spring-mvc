@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style type="text/css">
+        .parent {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: auto;
+        }
+
+        .block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background: grey;
+        }
+
+        td {
+            font: 1.2em "Fira Sans", sans-serif;
+            background: lightslategray;
+        }
+
+        h1 {
+            font: 1.6em "Fira Sans", sans-serif;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="parent">
+    <div class="block">
+        <h1>CAR Catalog</h1>
+        <table>
+            <div th:each="car : ${cars}">
+                <tr>
+                    <td th:text="${car.getId}">id</td>
+                    <td th:text="${car.getBrand()}">brand</td>
+                    <td th:text="${car.getModel()}">model</td>
+                    <td th:text="${car.getVin()}">vin</td>
+                </tr>
+            </div>
+        </table>
+        <div style="text-align:center">
+            <a href="/cars/1">1 </a>
+            <a href="/cars/2">2 </a>
+            <a href="/cars/3">3 </a>
+            <a href="/cars/4">4 </a>
+            <a href="/cars/5">5 </a>
+            <a href="/cars/6">6 </a>
+            <a href="/cars/7">7 </a>
+            <a href="/cars/8">8 </a>
+            <a href="/cars/9">9 </a>
+            <a href="/cars/10">10</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

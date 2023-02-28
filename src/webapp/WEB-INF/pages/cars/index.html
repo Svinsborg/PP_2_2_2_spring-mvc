@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +33,13 @@
             font: 1.6em "Fira Sans", sans-serif;
             text-align: center;
         }
+        .select {
+            background: darkslategrey;
+            text-align: center;
+            font-weight: 900;
+            color: lightslategrey;
+        }
+
 
     </style>
 </head>
@@ -43,6 +49,12 @@
     <div class="block">
         <h1>CAR Catalog</h1>
         <table>
+            <tr>
+                <td class="select">ID</td>
+                <td class="select">Brand</td>
+                <td class="select">Model</td>
+                <td class="select">VIN</td>
+            </tr>
             <div th:each="car : ${cars}">
                 <tr>
                     <td th:text="${car.getId}">id</td>
@@ -53,6 +65,10 @@
             </div>
         </table>
         <div style="text-align:center">
+            <a href="/cars/-3">-3 </a>
+            <a href="/cars/-2">-2 </a>
+            <a href="/cars/-1">-1 </a>
+            <a href="/cars/0">0 </a>
             <a href="/cars/1">1 </a>
             <a href="/cars/2">2 </a>
             <a href="/cars/3">3 </a>

@@ -27,7 +27,11 @@ public class CarsController {
 
     @GetMapping("/{count}")
     public String select(@PathVariable("count") int count, Model model){
-        model.addAttribute("cars", carService.countCars(count));
-        return "cars/index";
+        if(count >= 0) {
+            model.addAttribute("cars", carService.countCars(count));
+            return "cars/index";
+        } else {
+            return "cars/err/warning";
+        }
     }
 }

@@ -25,6 +25,8 @@ public class CarServiceImp implements CarService {
 
     @Override
     public  List<Car> countCars(int count){
+        if(count > cars.size()){ count = cars.size();}
+        if(count < 0 ){ count = 0;}
         return cars.stream().limit(count).toList();
     }
 }

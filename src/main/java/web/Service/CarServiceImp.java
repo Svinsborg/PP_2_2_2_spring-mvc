@@ -17,6 +17,9 @@ public class CarServiceImp implements CarService {
         cars.add(new Car(++CARS_ID,"Audi","Q4",75112454L));
         cars.add(new Car(++CARS_ID,"Lada","Vesta",9254785L));
         cars.add(new Car(++CARS_ID,"UAZ","Patriot",245783L));
+        cars.add(new Car(++CARS_ID,"Honda","CRV",14587742L));
+        cars.add(new Car(++CARS_ID,"KIA","Rio",2145542L));
+        cars.add(new Car(++CARS_ID,"FIRD","Focus",6325742L));
     }
     @Override
     public List<Car> index(){
@@ -25,8 +28,14 @@ public class CarServiceImp implements CarService {
 
     @Override
     public  List<Car> countCars(int count){
-        if(count > cars.size()){ count = cars.size();}
         if(count < 0 ){ count = 0;}
-        return cars.stream().limit(count).toList();
+        if(count > 5 ){
+            return cars;
+        } else {
+            return cars.stream().limit(count).toList();
+        }
     }
 }
+
+
+
